@@ -38,4 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
             themeIcon.classList.replace('fa-sun', 'fa-moon');
         }
     });
+
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            mobileMenuToggle.classList.remove('active');
+        });
+    });
 });
