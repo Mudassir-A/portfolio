@@ -42,17 +42,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle functionality
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-item');
 
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('show');
         mobileMenuToggle.classList.toggle('active');
+        
+        if (navLinks.classList.contains('show')) {
+            navItems.forEach((item, index) => {
+                item.style.animationDelay = `${0.1 * (index + 1)}s`;
+                item.style.animation = 'fadeInDown 0.5s forwards';
+            });
+        } else {
+            navItems.forEach(item => {
+                item.style.animation = 'none';
+            });
+        }
     });
 
     // Close mobile menu when a link is clicked
-    document.querySelectorAll('.nav-item').forEach(link => {
+    navItems.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('show');
             mobileMenuToggle.classList.remove('active');
+            navItems.forEach(item => {
+                item.style.animation = 'none';
+            });
         });
     });
 });
