@@ -86,8 +86,8 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .icon-item {
@@ -98,6 +98,7 @@ section {
     padding: 1rem;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100px;
 }
 
 .icon-item:hover {
@@ -105,13 +106,16 @@ section {
     box-shadow: 0 5px 15px rgba(var(--accent-color-rgb), 0.2);
 }
 
-.icon-item i {
-    font-size: 2rem;
+.icon-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
     margin-bottom: 0.5rem;
 }
 
-.icon-item:hover i {
-    color: var(--accent-color);
+.icon-item span {
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 #projects .projects-container {
