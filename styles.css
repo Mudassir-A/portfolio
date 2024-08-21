@@ -173,34 +173,57 @@ section {
     margin-top: 1rem;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 .social-icons a {
     color: var(--text-color);
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     overflow: hidden;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--card-bg);
 }
 
 .social-icons a:hover {
+    width: auto;
+    padding-right: 1rem;
+    border-radius: 1.25rem;
+}
+
+.social-icons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover .icon {
     color: var(--accent-color);
 }
 
-.social-icons a::after {
-    content: attr(data-username);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: all 0.3s ease;
-    font-size: 0.8rem;
+.social-icons .username {
+    font-size: 0.9rem;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-1rem);
+    transition: all 0.3s ease;
 }
 
-.social-icons a:hover::after {
-    top: 120%;
+.social-icons a:hover .username {
     opacity: 1;
+    transform: translateX(0);
 }
 
 footer {

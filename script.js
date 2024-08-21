@@ -25,16 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Thank you for your message! I will get back to you soon.');
         contactForm.reset();
     });
-
-    // Social links hover effect
-    const socialLinks = document.querySelectorAll('.social-icons a');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            link.style.paddingBottom = '20px';
-        });
-        link.addEventListener('mouseleave', () => {
-            link.style.paddingBottom = '0';
-        });
-    });
 });
 
