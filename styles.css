@@ -90,6 +90,9 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 .card img {
@@ -109,6 +112,21 @@ section {
 .card:hover {
     transform: translateY(-10px) rotate(2deg);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card::after {
+    content: '\f08e';  /* Font Awesome external link icon */
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
