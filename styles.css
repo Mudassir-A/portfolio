@@ -2,6 +2,7 @@
     --bg-color: #121212;
     --text-color: #e0e0e0;
     --accent-color: #4CAF50;
+    --accent-color-rgb: 76, 175, 80;  /* RGB values of #4CAF50 */
     --card-bg: #1e1e1e;
 }
 
@@ -94,6 +95,7 @@ section {
     color: var(--text-color);
     cursor: pointer;
     position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -112,25 +114,7 @@ section {
 
 .card:hover {
     transform: translateY(-5px);
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    background: var(--accent-color);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    filter: blur(15px);
-}
-
-.card:hover::before {
-    opacity: 0.3;
+    box-shadow: 0 10px 20px rgba(var(--accent-color-rgb), 0.3);
 }
 
 .card::after {
