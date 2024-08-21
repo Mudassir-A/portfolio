@@ -1,15 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var options = {
+    var nameOptions = {
         strings: ['Mohd Mudassir Ansari'],
         typeSpeed: 50,
         backSpeed: 50,
-        loop: true,
-        loopCount: Infinity,
+        loop: false,
         showCursor: true,
-        cursorChar: '|'
+        cursorChar: '|',
+        onComplete: function(self) {
+            setTimeout(function() {
+                var subtitleOptions = {
+                    strings: ['Data Science Enthusiast', 'Neural Networks', 'Deep Learning'],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|'
+                };
+                var subtitleTyped = new Typed('#typed-subtitle', subtitleOptions);
+            }, 1000);
+        }
     };
 
-    var typed = new Typed('#typed-name', options);
+    var nameTyped = new Typed('#typed-name', nameOptions);
 
     // Contact form submission
     const contactForm = document.getElementById('contact-form');
