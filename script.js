@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var options = {
         strings: ['Mohd Mudassir Ansari'],
-        typeSpeed: 75,
+        typeSpeed: 50,
         backSpeed: 50,
         loop: true,
         loopCount: Infinity,
@@ -25,5 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Thank you for your message! I will get back to you soon.');
         contactForm.reset();
     });
-});
 
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        if (document.body.classList.contains('light-theme')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+    });
+});

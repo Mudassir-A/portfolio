@@ -15,34 +15,96 @@ body {
     color: var(--text-color);
 }
 
-header {
-    background: rgba(30, 30, 30, 0.8);
+:root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #4CAF50;
+    --accent-color-rgb: 76, 175, 80;
+    --card-bg: #1e1e1e;
+    --navbar-bg: rgba(30, 30, 30, 0.8);
+}
+
+.light-theme {
+    --bg-color: #f0f0f0;
+    --text-color: #333333;
+    --accent-color: #4CAF50;
+    --accent-color-rgb: 76, 175, 80;
+    --card-bg: #ffffff;
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
-    padding: 20px 0;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul li {
-    margin: 0 15px;
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
-nav ul li a {
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-item {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
 }
 
-nav ul li a:hover {
+.nav-item::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-item:hover {
+    color: var(--accent-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
     color: var(--accent-color);
 }
 
