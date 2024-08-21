@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var options = {
         strings: ['Mohd Mudassir Ansari'],
-        typeSpeed: 50,
+        typeSpeed: 75,
         backSpeed: 50,
         loop: true,
         loopCount: Infinity,
