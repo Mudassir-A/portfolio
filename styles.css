@@ -1,3 +1,4 @@
+
 :root {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -7,15 +8,6 @@
     --card-bg: #1e1e1e;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-
 :root {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -23,6 +15,20 @@ body {
     --accent-color-rgb: 76, 175, 80;
     --card-bg: #1e1e1e;
     --navbar-bg: rgba(30, 30, 30, 0.8);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    /* overflow: hidden; */
 }
 
 .light-theme {
